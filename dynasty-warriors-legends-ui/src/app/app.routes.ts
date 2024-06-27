@@ -1,17 +1,22 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet, Routes } from '@angular/router';
 import { AboutLegendsComponent } from './about-legends/about-legends.component';
+import { KingdomsComponent } from './kingdoms/kingdoms.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WarriorsLegendsComponent } from './warriors-legends/warriors-legends.component';
+import { WeaponsComponent } from './weapons/weapons.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/about', pathMatch: 'full' },
-    // {path:'warriors', redirectTo: '/', pathMatch:'full'}
-    // {path:'kingdoms', redirectTo: '/', pathMatch:'full'}
-    // {path:'weapons', redirectTo: '/', pathMatch:'full'}
-    { path: 'about', component: AboutLegendsComponent }
+    { path: 'home', component: PageNotFoundComponent },
+    { path: 'warriors', component: WarriorsLegendsComponent },
+    { path: 'kingdoms', component: KingdomsComponent },
+    { path: 'weapons', component: WeaponsComponent },
+    { path: 'about', component: AboutLegendsComponent },
+    { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [RouterModule.forRoot(routes, { enableTracing: true })],
     exports: [RouterModule]
 })
 export class AppRoutingModule { };
