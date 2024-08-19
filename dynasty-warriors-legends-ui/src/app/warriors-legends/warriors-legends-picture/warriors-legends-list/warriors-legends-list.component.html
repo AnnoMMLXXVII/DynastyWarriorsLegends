@@ -1,15 +1,36 @@
-<div id = "warriors-legends-list-container">
-
-    <section>
-    <select name="warriors-legends-list-kingdom-select" id="warriors-legends-list-kingdom-select">
-        <option value="SHU">SHU</option>
-        <option value="WU">WU</option>
-        <option value="JIN">JIN</option>
-        <option value="WEI">WEI</option>
-        <option value="OTHER">OTHER</option>
-    </select>
+<div id="warriors-legends-list-container">
+    <section id='warriors-legends-list-carousel' style="height:75px;border:red thin solid;">
+        <!-- FUTURE TODO: IMPLEMENT CAROUSEL FEATURE -->
+        <!-- <div class='carousel slide' data-ride="'carousel">
+            <div data="'carousel-inner">
+                <div class='w-100 carousel-item active'>SHU</div>
+                <div class='w-100  carousel-item'>WEI</div>
+                <div class='w-100  carousel-item'>WU</div>
+                <div class='w-100  carousel-item'>JIN</div>
+                <div class='w-100  carousel-item'>OTHER</div>
+            </div>
+            <a class="carousel-control-prev" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="false"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> -->
+        <select class='select-option' name="warriors-legends-list-kingdom-select"
+            id="warriors-legends-list-kingdom-select" #kingdomSelectWarriorsLegends
+            (change)="selectedKingdom(kingdomSelectWarriorsLegends.value)">
+            <option *ngFor="let k of kingdoms" [value]='k'>{{k}}</option>
+        </select>
     </section>
-    <section id = "warriors-legends-list-section">
-        <label id = "name-of-warrior-list"></label>
+    <section id="warriors-legends-list-section">
+        <table class='table table-dark'>
+            <tbody>
+                <tr scrop="row" *ngFor="let o of filteredOfficers">
+                    <td>{{o.name}}</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 </div>

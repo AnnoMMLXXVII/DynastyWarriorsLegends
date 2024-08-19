@@ -1,10 +1,17 @@
 <div id = "warriors-legends-container">
 
-    <warriors-legends-list></warriors-legends-list>
-    <section id = 'warriors-legends-details-section'>
-        <warriors-legends-picture></warriors-legends-picture>
-        <warriors-legends-basic-stats></warriors-legends-basic-stats>
-        <warriors-legends-weapons></warriors-legends-weapons>
+    <div>
+        <!-- <button (click)="getAllAttributes()">GET ALL ATTRIBUTES</button> -->
+    </div>
 
+    <section class = "d-flex">
+        <section>
+            <warriors-legends-list></warriors-legends-list>
+        </section>
+        <section id = 'warriors-legends-details-section'>
+            <warriors-legends-picture></warriors-legends-picture>
+            <warriors-legends-basic-stats></warriors-legends-basic-stats>
+            <warriors-legends-weapons></warriors-legends-weapons>
+        </section>
     </section>
 </div>
