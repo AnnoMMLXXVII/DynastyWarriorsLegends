@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { KingdomsComponent } from './kingdoms/kingdoms.component';
@@ -8,7 +9,10 @@ import { WeaponsComponent } from './weapons/weapons.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavMenuBarComponent, WarriorsLegendsComponent, KingdomsComponent, WeaponsComponent],
+  imports:
+    [RouterOutlet, NavMenuBarComponent,
+      WarriorsLegendsComponent, KingdomsComponent,
+      WeaponsComponent, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

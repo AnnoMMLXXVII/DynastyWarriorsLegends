@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AboutLegendsComponent } from './about-legends/about-legends.component';
 import { KingdomsComponent } from './kingdoms/kingdoms.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -16,8 +16,10 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { enableTracing: true })],
-    exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes, { enableTracing: true }) ],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { };
+export class AppRoutingModule { 
+
+};
 
