@@ -1,5 +1,7 @@
-<div id = "legends-picture-container">
+<div id="warriors-legends-picture-container">
     <section>
-        <!-- <img src="https://static.wikia.nocookie.net/dynastywarriors/images/d/dd/Zhou_Tai_Artwork_%28DW9%29.png/revision/latest?cb=20210718224801" alt="NO LEGEND IMAGE"/> -->
+        <ng-container *ngIf="image!==''">
+            <img src="{{image}}" alt="{{altImage}}" />
+        </ng-container>
     </section>
 </div>
