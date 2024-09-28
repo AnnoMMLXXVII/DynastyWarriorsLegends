@@ -30,7 +30,9 @@ export class WarriorsLegendsDetailsService {
         localWarriorsDetails.kingdom = legend.kingdom;
         localWarriorsDetails.image = this.composeOfficerImageUrl(legend.name, legend.kingdom, true);
         localWarriorsDetails.state = legend.state;
-        localWarriorsDetails.weapon = legend.weaponType;
+        localWarriorsDetails.weaponType = legend.weaponType;
+        localWarriorsDetails.weapons = legend.weapons;
+        console.log(legend);
         return this.warriorsDetails.next(localWarriorsDetails);
     }
 
@@ -40,7 +42,7 @@ export class WarriorsLegendsDetailsService {
         const kindomContext: string = toCamelCase(kingdom);
         const officerName: string = name.replaceAll(" ", "_");
         let url = ANNO_IMAGES_BASE_URL + officerContextPath + kindomContext + "/" + officerName + primaryText + JPG;
-        let size = "w=500&h=500";
+        let size = "w=750&h=500";
         return url + "&" + size;
     }
 
