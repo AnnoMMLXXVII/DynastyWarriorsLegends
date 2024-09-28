@@ -1,4 +1,4 @@
-import { WarriorsApiEndpoints } from './warriors-api-endpoints.enum';
+import { WarriorsApiEndpoints } from './warriors-api-endpoints';
 
 describe('WarriorsApiEndpoints', () => {
   it('should create an instance', () => {

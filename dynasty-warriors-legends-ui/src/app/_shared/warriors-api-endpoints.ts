@@ -7,3 +7,5 @@ export class WarriorsApiEndpoints {
     public static SUB_OFFICERS_URL = "/characters/sub-officers";
     public static WEAPONS_URL = "/weapons";
 }
+export const WARRIORS_SERVICES_API_HOST = "warriors-service-anno.onrender.com";
+export const ANNO_IMAGES_BASE_URL = "https://annommlxxvii.netlify.app/.netlify/images?url=assets/";

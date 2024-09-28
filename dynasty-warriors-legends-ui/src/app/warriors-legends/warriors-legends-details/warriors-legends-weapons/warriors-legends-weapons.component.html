@@ -1,0 +1,30 @@
+<section id="warriors-legends-details-weapons-section">
+    <table class=" table table-dark">
+        <thead>
+            <th scope="col">Name</th>
+            <th scope="col">Affinity</th>
+            <th scope="col">Power</th>
+            <th scope="col">Rarity</th>
+            <th scope="col">Star</th>
+            <th scope="col">Length</th>
+            <th scope="col">State</th>
+            <th scope="col">Type</th>
+            <th scope="col">Attributes</th>
+            <th scope="col">Images</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let w of warriorsWeaponsDetails">
+                <td>{{w.name}}</td>
+                <td>{{w.affinity}}</td>
+                <td>{{w.power}}</td>
+                <td>{{w.rarity}}</td>
+                <td>{{w.star}}</td>
+                <td>{{w.length}}</td>
+                <td>{{w.state}}</td>
+                <td>{{w.type}}</td>
+                <td>TBD</td>
+                <td>TBD</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

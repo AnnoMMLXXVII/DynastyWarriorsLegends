@@ -1,8 +1,9 @@
 import { NgFor } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WarriorsLegendsAPIService } from '../../../_services/warriors-legends-api.service';
 import { KINGDOMS } from '../../../_shared/enums/warriors-constants';
 import { WarriorsApiEndpoints } from '../../../_shared/warriors-api-endpoints';
+import { WarriorsLegendsDetailsService } from '../warriors-legends-details.service';
 @Component({
   selector: 'warriors-legends-list',
   standalone: true,
@@ -10,24 +11,23 @@ import { WarriorsApiEndpoints } from '../../../_shared/warriors-api-endpoints';
   templateUrl: './warriors-legends-list.component.html',
   styleUrl: './warriors-legends-list.component.scss'
 })
-export class WarriorsLegendsListComponent implements AfterViewInit {
+export class WarriorsLegendsListComponent implements OnInit {
 
   public officers: any[] = [];
   public filteredOfficers: any[] = [];
   public kingdomSelected: String = "";
   public kingdoms: KINGDOMS[] = []
-  constructor(private apiService: WarriorsLegendsAPIService) {
+
+  constructor(private apiService: WarriorsLegendsAPIService, private legendsDetailsService: WarriorsLegendsDetailsService) {
     this.filteredOfficers = [];
     this.getAllOfficers();
     this.kingdoms = [KINGDOMS.SHU, KINGDOMS.WEI, KINGDOMS.WU, KINGDOMS.JIN, KINGDOMS.OTHER]
 
   }
 
-  // actions after page loads
-  public ngAfterViewInit() {
+  public ngOnInit() {
     this.selectedKingdom(KINGDOMS.SHU);
   }
-
 
   public getAllKingdoms() {
     return this.kingdoms;
@@ -41,8 +41,9 @@ export class WarriorsLegendsListComponent implements AfterViewInit {
   }
 
   public selectedKingdom(k: any) {
+    this.legendsDetailsService.resetOfficerImage();
     this.kingdomSelected = k;
-    console.log(k);
+    // console.log(k);
     this.updateFilteredOfficers();
   }
 
@@ -55,7 +56,11 @@ export class WarriorsLegendsListComponent implements AfterViewInit {
         this.filteredOfficers.push(e);
       }
     });
-    console.log(this.filteredOfficers);
+    // console.log(this.filteredOfficers);
+  }
+
+  displayLegendDetails(legend: any) {
+    this.legendsDetailsService.setLegendToDisplay(legend);
   }
 
 

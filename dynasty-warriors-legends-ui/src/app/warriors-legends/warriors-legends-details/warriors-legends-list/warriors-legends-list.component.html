@@ -21,14 +21,16 @@
         <select class='select-option' name="warriors-legends-list-kingdom-select"
             id="warriors-legends-list-kingdom-select" #kingdomSelectWarriorsLegends
             (change)="selectedKingdom(kingdomSelectWarriorsLegends.value)">
-            <option *ngFor="let k of kingdoms" [value]='k'>{{k}}</option>
+            <option *ngFor="let k of kingdoms" id="warriors-list-kingdoms-option-{{k}}" [value]='k'>{{k}}</option>
         </select>
     </section>
     <section id="warriors-legends-list-section">
         <table class='table table-dark'>
             <tbody>
                 <tr scrop="row" *ngFor="let o of filteredOfficers">
-                    <td>{{o.name}}</td>
+                    <td>
+                        <button type="button" (click)="displayLegendDetails(o)"> {{o.name}}</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
