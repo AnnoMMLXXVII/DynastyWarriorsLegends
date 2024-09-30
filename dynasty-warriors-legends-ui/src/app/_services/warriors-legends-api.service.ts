@@ -7,14 +7,14 @@ import { WARRIORS_SERVICES_API_HOST, WarriorsApiEndpoints } from '../_shared/war
 })
 export class WarriorsLegendsAPIService {
 
-  private baseURL = "https://" + WARRIORS_SERVICES_API_HOST + "/" + WarriorsApiEndpoints.BASE_CONTEXT;
+  private baseURL = "https://" + WARRIORS_SERVICES_API_HOST + WarriorsApiEndpoints.BASE_CONTEXT;
 
   constructor(private http: HttpClient) { }
 
   public httpGet(resource: string) {
     let url = this.baseURL + resource;
     console.log(url);
-    return this.http.get(url + "/");
+    return this.http.get(url);
   }
 
   public httpGetImageUrl(imageUrl: string) {
